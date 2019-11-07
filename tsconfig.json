@@ -1,0 +1,68 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "*": ["types/*"],
+      "@cps/*": [
+        "components/*"
+      ],
+      "@common-cps": [
+        "components/common/index"
+      ],
+      "@redux/*": [
+        "redux/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@css/*": [
+        "assets/css/*"
+      ],
+      "@images/*": [
+        "assets/images/*"
+      ],
+      "@ctrls/*": [
+        "controllers/*"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
+      "@common/*": [
+        "common/*"
+      ],
+      "@env": [
+        "env/index"
+      ],
+      "@typings/*": [
+        "typings/*"
+      ]
+    },
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "jsx": "preserve",
+    "experimentalDecorators": true,
+    "strictNullChecks":false,
+    "downlevelIteration":true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/utils/third.js"
+  ]
+}

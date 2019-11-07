@@ -1,0 +1,64 @@
+
+
+@mixin svg-am-icon-xxs {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0px;
+}
+$searchHeight: 40px;
+
+@mixin nav-tab {
+  font-size: 22px;
+  position: relative;
+  top: 1px;
+}
+// 搜索框
+.search-bar{
+  width:100vw;
+  .am-search{
+    height: 48px;
+    background: rgba(255,255,255,1);
+    .am-search-input{
+      height: $searchHeight;
+      background: rgba(0,0,0,0.05);
+      border-radius: 20px;
+      .am-search-synthetic-ph{
+        height: $searchHeight;
+        line-height: $searchHeight;
+      }
+      .am-search-value{
+        height: 40px;
+      }
+      .am-search-clear.am-search-clear-show{
+        padding: 12.5px;
+        transition: none;
+      }
+    }
+    // 隐藏取消按钮
+    .am-search-cancel{
+      display: none!important;
+    }
+  }
+}
+
+// 底部导航按钮
+.bottom-navlink-bar{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+  z-index: 1;
+  .nav-tab{
+    font-size: 22px;
+    position: relative;
+    top: 1px;
+  }
+  .am-tab-bar-bar{
+    height: 48px;
+    z-index: 0;
+  }
+  .animated{
+    animation-duration: 0.3s;
+  }
+}

@@ -1,0 +1,228 @@
+:root {
+  --themeColor: rgba(208,2,27,1);
+  --themeBgColor: linear-gradient(135deg,rgba(255,81,81,1) 0%,rgba(224,3,36,1) 100%);
+  --shallowThemeColor: rgba(208,2,27,.2);
+  --activeThemeBgColor: rgba(208,2,27,1);
+  --hoverThemeBgColor: rgba(208,2,27,1);
+  --themeSubBgColor: linear-gradient(135deg,rgba(250,217,97,1) 0%,rgba(247,107,28,1) 100%);
+}
+$themeColor: var(--themeColor);
+$themeBgColor: var(--themeBgColor);
+$shallowThemeColor: var(--shallowThemeColor);
+$activeThemeBgColor: var(--activeThemeBgColor);
+$hoverThemeBgColor: var(--hoverThemeBgColor);
+$themeSubBgColor: var(--themeSubBgColor);
+// 白色背景
+$whiteBg: rgba(255,255,255,1);
+// 灰色背景
+$grayBg: rgba(242,242,242,1);
+// 橘色背景
+$orangeBg: linear-gradient(135deg,rgba(250,217,97,1) 0%,rgba(247,107,28,1) 100%);
+$hoverOrangeBg: linear-gradient(135deg,rgba(250,217,97,1) 0%,rgba(247,107,28,1) 100%) rgba(0,0,0,0.1);
+$activeOrangeBg: linear-gradient(135deg,rgba(250,217,97,1) 0%,rgba(247,107,28,1) 100%) rgba(0,0,0,0.1);
+// 红色btn禁用
+$disabledRedBg: rgba(244,197,203,1);
+// 灰色btn禁用
+$disabledGrayBg: rgba(213,213,213,0.1);
+// 灰色字体
+$grayColor: rgba(142,149,159,1);
+// 黑色字体
+$blackColor: rgba(74,74,74,1);
+// 白色字体
+$whiteColor: rgba(255,255,255,1);
+// 绿色字体
+$greenColor: rgba(126,211,33,1);
+// 蓝色字体
+$blueColor: rgba(38,144,233,1);
+// 禁用状态字体
+$disabledColor: rgba(213,213,213,1);
+// 默认border-color
+$borderColor: rgba(213,213,213,1);
+// table的row hover时的颜色
+$tableHoverColor: rgba(0,0,0,0.02);
+
+// 垂直水平居中
+@mixin positionCenter{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+// 默认字体
+@mixin defaultFont{
+  @include font(16px, $whiteColor);
+}
+// 文字溢出显示...
+@mixin textEllipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+// flex居中
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// 去除滚动条
+@mixin hiddenScrollbar {
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: rgba(240,240,240,0)
+  }
+}
+// border
+@mixin border($width: 1px, $color: $borderColor, $radius: 4px, $style: solid) {
+  border: {
+    width: $width;
+    color: $color;
+    radius: $radius;
+    style: $style;
+  }
+}
+// font
+@mixin font($width: 14px, $color: $blackColor, $weight: 400) {
+  color: $color;
+  font: {
+    size: $width;
+    weight: $weight;
+  }
+}
+// 按钮状态
+@mixin btnState($hoverColor: $hoverThemeBgColor, $activeBg: $activeThemeBgColor,$borderColor: $themeColor) {
+  &:hover, &:focus{
+    background: $hoverColor;
+    color: white!important;
+    border-color: $borderColor;
+  }
+  &:active{
+    background: $activeBg;
+    color: white!important;
+  }
+}
+//
+@mixin btn-danger{
+  @include eshine-btn;
+  background: $themeBgColor;
+  @include btnState;
+}
+@mixin btn-default{
+  @include eshine-btn;
+  color: $grayColor;
+  background: $whiteBg;
+  @include border(1px);
+}
+
+// button的默认样式
+@mixin eshine-btn{
+  width: 160px;
+  height: 40px;
+  // border-radius:24px;
+  border: none;
+  @include defaultFont;
+  background:$themeBgColor;
+  @include btnState;
+}
+// hover是卡片的transform
+@mixin hoverTransformShadow($color: $blackColor){
+  &:hover {
+    transform: translate3d(0,-10px,0);
+    box-shadow: 2px 6px 20px 0 rgba($color,.4);
+  }
+}
+// input的基本样式
+@mixin input{
+  width: 544px;
+  height: 56px;
+  @include font(14px, $grayColor);
+}
+.btn-default{
+  @include btn-default;
+}
+.btn-default-lg-radius{
+  @include btn-default;
+  border-radius:24px;
+}
+.btn-default-sm-radius{
+  @include btn-default;
+  border-radius:4px;
+}
+.btn-default-disabled{
+  color: $disabledColor!important;
+  background: $disabledGrayBg!important;
+  border: 1px solid $disabledColor!important;
+  cursor: not-allowed;
+  &:hover{
+    color: $disabledColor!important;
+    background: $disabledGrayBg!important;
+  }
+  &:active{
+    color: $disabledColor!important;
+    background: $disabledGrayBg!important;
+  }
+}
+.btn-danger{
+  @include btn-danger;
+}
+.btn-danger-whiteBg{
+  @include btn-danger;
+  background: white;
+  @include border(1px, $themeColor);
+  color: $themeColor;
+  border-radius: 4px;
+}
+.btn-danger-lg-radius{
+  @include btn-danger;
+  border-radius:24px;
+}
+.btn-danger-mid-radius{
+  @include btn-danger;
+  border-radius:4px;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.btn-danger-sm-radius{
+  @include btn-danger;
+  border-radius:4px;
+}
+// .active{
+//   background: $hoverThemeBgColor;
+//   color: white;
+//   border: none;
+// }
+.btn-danger-disabled{
+  color: $whiteColor!important;
+  background: $disabledRedBg!important;
+}
+
+@mixin btn-warning{
+  @include eshine-btn;
+  background: $orangeBg;
+  @include btnState($hoverOrangeBg, $activeOrangeBg, $orangeBg);
+}
+.btn-warning-lg-radius{
+  @include btn-warning;
+  border-radius:24px;
+}
+.btn-virtual{
+  @include btn-danger;
+  border-radius:24px;
+  width: 72px;
+  height: 24px;
+  @include font(14px, $whiteColor);
+}
+i.rmb {
+  display: inline-block;
+  transform: scale(0.8);
+  position: relative;
+  top:1px;
+  font-style: normal;
+}
+a.phone {
+  @include font(16px, $blueColor, 500);
+}

@@ -1,0 +1,51 @@
+@import '../iconfont/iconfont.css';
+@import './common.scss';
+@import './home.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+html,body{
+  background: $grayBg!important;
+  width: 100vw;
+  height: 100vh;
+  &::-webkit-scrollbar{
+    width:0;
+    display: none;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+#root{
+  height: 100%;
+}
+.dashboard{
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  .dashboard-content{
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+    height: 100%;
+    overflow-x: hidden;
+  }
+}
+.fadeInRight{
+  animation-duration: 0.2s!important;
+}
+.fadeOutRight{
+  animation-duration: 0.1s!important;
+}
