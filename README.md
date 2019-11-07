@@ -30,7 +30,6 @@
 |————react-app-env.d.ts ------------- 环境等声明
 |————.eslintrc.js ----------------- eslint配置
 |————README.md  --------------- 项目描述文件
-|————package-lock.json  ------- npm包版本锁定文件, 确保每个环境安装的版本一致
 |————package.json ------------- npm包依赖配置
 ```
 
