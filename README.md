@@ -4,7 +4,7 @@
 2. ant-mobile
 3. vconsole
 4. axios
-5. redux(待添加)
+5. redux
 6. eslint webpack
 6. 陆续添加..
 
