@@ -11,7 +11,7 @@
     "@types/react-router-dom": "^4.3.3",
     "@types/redux-thunk": "^2.1.0",
     "antd-mobile": "^2.2.13",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "immutability-helper": "^3.0.1",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
